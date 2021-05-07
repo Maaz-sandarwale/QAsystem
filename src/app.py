@@ -7,7 +7,7 @@ from src.components import QueryProcessor, DocumentRetrieval, PassageRetrieval, 
 
 app = Flask(__name__)
 SPACY_MODEL = os.environ.get('SPACY_MODEL', 'en_core_web_sm')
-QA_MODEL = os.environ.get('QA_MODEL', 'distilbert-base-cased-distilled-squad')
+QA_MODEL = os.environ.get('QA_MODEL', 'deepset/bert-base-cased-squad2')
 nlp = spacy.load(SPACY_MODEL, disable=['ner', 'parser', 'textcat'])
 query_processor = QueryProcessor(nlp)
 document_retriever = DocumentRetrieval()
